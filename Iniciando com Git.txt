@@ -1,0 +1,43 @@
+1 - Criar uma conta no github
+2 - Validar a conta através do E-mail de confirmação
+3 - Instalar o GIT no computador, seguir tutorial do site.
+4 - configuração inicial
+	* git config --global user.name
+	* git config --global user.email
+5 - gerar a chave de acesso através do gitbash
+	* ssh-keygen -t rsa -b 4096 -C "emaildogit@gmail.com"
+	* ls -al ~/.ssh (comando que verfica se a chave de acesso foi criada)
+	* eval $(ssh-agent -s) (Testa se o agente ssh está rodando)
+	* ssh-add ~/.ssh/id_rsa (adiciona a chave privada ao agente ssh)
+	* clip < ~/.ssh/id_rsa.pub (copia a chave publica para a clipboard)
+6 - Colar nas configurações do github
+7 - ssh -T git@github.com (Testar acesso ao github via git-bash)
+
+-----------------------------------------------------------------------------
+git init (Inicia um repositório local)
+git add . (Adiciona arquivo ao git)
+git commit (Informa modificação dos arquivos)
+git log (Exibe o log das alterações)
+
+git init --bare (Repositório de repositorios)
+git clone @repositorio (Clona o repositorio online)
+git remote add origin git@github.com:antonioaugustoalves81/repo-curso-js.git (Sincroniza com repositorio remoto)
+git push -u origin master (Envia os arquivos para o respositorio remoto)
+git pull origin (Baixa as alterações do repositório remoto)
+git fetch origin (Atualiza as referencias com um repositorio remoto)
+
+git branch nome-do-branch (Cria um novo branch)
+git branch (lista os branches do repositorio)
+git checkout nome-do-branch (Troca de branch)
+git push --set-upstream origin alunos (sincronizar a nova branch no repositorio remoto)
+git branch -d branch (remove a branch local)
+git push --delete origin branch (remove a branch remota)
+
+git tag v1.0.0 (criar tags)
+git push origin --tags (Publicar as tags no repositório remoto)
+--------------------------------------------------------------------------
+Resolvendo conflitos
+git merge develop
+git checkout --our file.txt
+git checkout --theirs file.txt
+git merge –abort
